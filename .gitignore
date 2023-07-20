@@ -1,0 +1,4 @@
+*test.gpc
+tests/etc/write_test.gpc
+composer.lock
+vendor/

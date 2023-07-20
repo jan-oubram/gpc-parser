@@ -29,6 +29,7 @@ test('Record instances can be converted to record strings', function () {
         amount: '12300',
         type: '1',
         variableSymbol: '1234',
+        foreignBankCode: '0123',
         constantSymbol: '',
         specificSymbol: '',
         valuta: '200723',
@@ -38,5 +39,5 @@ test('Record instances can be converted to record strings', function () {
     );
 
     expect((string) $record)
-        ->toBe('0750000000123456789000000098765432100000123456780000000123001000000123400000000000000000000200723Objednávka 1234     00203200723');
+        ->toBe('0750000000123456789000000098765432100000123456780000000123001000000123400012300000000000000200723Objednávka 1234     00203200723');
 });

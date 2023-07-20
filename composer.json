@@ -15,8 +15,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^10.15",
-        "symfony/var-dumper": "^6.3"
+        "illuminate/support": "*",
+        "symfony/var-dumper": "*"
     },
     "require-dev": {
         "pestphp/pest": "^2.9"

@@ -111,8 +111,6 @@ test('constant symbol is parsed and generated correctly', function () {
     $parser->parse($record1);
     $parser->parse($record2);
 
-    dd($parser->records());
-
     expect($parser->records()[0]->record->foreignBankCode)->toBe('1200');
     expect($parser->records()[1]->record->foreignBankCode)->toBe('1234');
 

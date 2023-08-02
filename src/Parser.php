@@ -56,9 +56,9 @@ class Parser
         return $generator->content();
     }
 
-    public function writeContent(string $path): bool
+    public function writeContent(string $path, string $encoding = null, string $lineSeparator = null): bool
     {
-        $generator = new Generator($this->encoding, $this->lineSeparator);
+        $generator = new Generator($encoding ?? $this->encoding, $lineSeparator ?? $this->lineSeparator);
 
         $generator->loadLines($this->lines);
 

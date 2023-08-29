@@ -2,3 +2,4 @@
 tests/etc/write_test.gpc
 composer.lock
 vendor/
+.DS_Store

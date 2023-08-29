@@ -7,7 +7,11 @@ namespace Stancl\GPC\Lines;
 use Stancl\GPC\Contracts\Line;
 
 /**
- * Used for the record header (074 / 'Data - výpis v Kč') that we don't need to parse.
+ * (Previously) used for the record header (074 / 'Data - výpis v Kč') that we didn't need to parse.
+ *
+ * Now the header is parsed by HeaderLine
+ *
+ * @see HeaderLine
  */
 class RawLine implements Line
 {

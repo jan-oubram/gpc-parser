@@ -11,9 +11,11 @@ class HeaderLine implements Line
 {
     public Header $header;
 
-    public function __construct(string $line)
+    public function __construct(string|Header $header)
     {
-        $this->header = Header::fromString($line);
+        $this->header = $header instanceof Header
+            ? $header
+            : Header::fromString($header);
     }
 
     public function __toString(): string

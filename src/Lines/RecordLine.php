@@ -11,9 +11,11 @@ class RecordLine implements Line
 {
     public Record $record;
 
-    public function __construct(string $line)
+    public function __construct(string|Record $record)
     {
-        $this->record = Record::fromString($line);
+        $this->record = $record instanceof Record
+            ? $record
+            : Record::fromString($record);
     }
 
     public function __toString(): string

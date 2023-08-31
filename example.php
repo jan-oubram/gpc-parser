@@ -1,7 +1,7 @@
 <?php
 
-use Stancl\GPC\Lines\RecordLine;
 use Stancl\GPC\Parser;
+use Stancl\GPC\Record;
 
 require './vendor/autoload.php';
 
@@ -15,7 +15,7 @@ $parser = new Parser;
 $parser->parseFile($file);
 
 collect($parser->records())
-    ->filter(fn (RecordLine $line) => $line->record->foreignAccount === $argv[2] && $line->record->variableSymbol)
-    ->each(fn (RecordLine $line) => $line->record->variableSymbol = $argv[3] . $line->record->variableSymbol);
+    ->filter(fn (Record $record) => $record->foreignAccount === $argv[2] && $record->variableSymbol)
+    ->each(fn (Record $record) => $record->variableSymbol = $argv[3] . $record->variableSymbol);
 
 $parser->writeContent($argv[1] . '-modified-test.gpc');

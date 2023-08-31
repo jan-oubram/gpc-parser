@@ -51,6 +51,9 @@ class Parser
             ->toArray();
     }
 
+    /**
+     * Returns the content as a UTF-8 string (see Generator@content() docblock)
+     */
     public function content(): string
     {
         $generator = new Generator($this->encoding, $this->lineSeparator);

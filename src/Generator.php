@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Stancl\GPC;
 
 use Stancl\GPC\Contracts\Line;
+use Stancl\GPC\Lines\RecordLine;
 
 class Generator
 {
@@ -30,6 +31,16 @@ class Generator
         }
 
         return $this;
+    }
+
+    /** @return Record[] */
+    public function records(): array
+    {
+        return collect($this->lines)
+            ->filter(fn (Line $line) => $line instanceof RecordLine)
+            ->map(fn (RecordLine $line) => $line->record)
+            ->values()
+            ->toArray();
     }
 
     /**

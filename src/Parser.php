@@ -41,10 +41,14 @@ class Parser
         };
     }
 
-    /** @return RecordLine[] */
+    /** @return Record[] */
     public function records(): array
     {
-        return collect($this->lines)->filter(fn (Line $line) => $line instanceof RecordLine)->values()->toArray();
+        return collect($this->lines)
+            ->filter(fn (Line $line) => $line instanceof RecordLine)
+            ->map(fn (RecordLine $line) => $line->record)
+            ->values()
+            ->toArray();
     }
 
     public function content(): string

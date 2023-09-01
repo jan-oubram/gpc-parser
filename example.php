@@ -19,3 +19,9 @@ collect($parser->records())
     ->each(fn (Record $record) => $record->variableSymbol = $argv[3] . $record->variableSymbol);
 
 $parser->writeContent($argv[1] . '-modified-test.gpc');
+
+// Generating GPC can be done using the Generator directly, without using Parser
+// $generator = new \Stancl\GPC\Generator;
+// $generator->lines[] = new HeaderLine(...);
+// $generator->lines[] = new RecordLine(...);
+// $generator->content();

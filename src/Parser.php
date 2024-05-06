@@ -6,6 +6,7 @@ namespace Stancl\GPC;
 
 use Stancl\GPC\Contracts\Line;
 use Stancl\GPC\Lines\HeaderLine;
+use Stancl\GPC\Lines\RawLine;
 use Stancl\GPC\Lines\RecordLine;
 
 class Parser
@@ -38,6 +39,7 @@ class Parser
         return match (substr($line, 0, 3)) {
             '074' => new HeaderLine($line),
             '075' => new RecordLine($line),
+            default => new RawLine($line),
         };
     }
 
